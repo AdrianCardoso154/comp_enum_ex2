@@ -1,5 +1,6 @@
 package entities;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -65,6 +66,18 @@ public class Order {
 		}
 		return sum;
 	}
+	
+@Override
+
+	public String toString(){
+	SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+	SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy");
+	
+	 return  "------------------------SUMARIO DO PEDIDO------------------------"+"\n"+"Momento do pedido: "+ sdf1.format(this.getMoment())+"\n" 
+	+"Status do pedido: " +this.getStatus() +"\n"+"Cliente: "
+	+this.getCl().getName()+" "+"("+sdf2.format(this.getCl().getBirdDay())+")"+" "+this.getCl().getEmail();
+	
+}
 	
 	
 }
